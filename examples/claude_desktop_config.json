@@ -2,7 +2,7 @@
   "mcpServers": {
     "azure": {
       "command": "python",
-      "args": ["-m", "azure_mcp.server", "start"],
+      "args": ["-m", "azure_mcp.server"],
       "env": {
         "AZURE_SUBSCRIPTION_ID": "your-subscription-id-here"
       }

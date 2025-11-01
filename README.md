@@ -54,13 +54,13 @@ az login
 Start the MCP server with stdio transport:
 
 ```bash
-python -m azure_mcp.server start
+python -m azure_mcp.server
 ```
 
 Or using the installed script:
 
 ```bash
-azure-mcp start
+azure-mcp
 ```
 
 ### Available Tools
@@ -156,7 +156,7 @@ Add the server configuration:
   "mcpServers": {
     "azure": {
       "command": "python",
-      "args": ["-m", "azure_mcp.server", "start"]
+      "args": ["-m", "azure_mcp.server"]
     }
   }
 }

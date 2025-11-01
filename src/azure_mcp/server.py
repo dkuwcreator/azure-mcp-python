@@ -361,17 +361,16 @@ class AzureMcpServer:
 
 
 @click.command()
-@click.argument("action", type=click.Choice(["start"]), default="start")
-def main(action: str = "start") -> int:
+def main() -> int:
     """
     Azure MCP Server - Provides Azure management tools via Model Context Protocol.
 
     Usage:
         python -m azure_mcp.server start
+        azure-mcp start
     """
-    if action == "start":
-        server = AzureMcpServer()
-        anyio.run(server.run)
+    server = AzureMcpServer()
+    anyio.run(server.run)
     return 0
 
 

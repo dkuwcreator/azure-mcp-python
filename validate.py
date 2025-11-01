@@ -58,14 +58,20 @@ def test_package_metadata():
     """Test package metadata."""
     print("\nTesting package metadata...")
     
-    sys.path.insert(0, 'src')
-    try:
-        import azure_mcp
+    # Use importlib to load module from path without modifying sys.path
+    import importlib.util
+    spec = importlib.util.spec_from_file_location(
+        "azure_mcp",
+        "src/azure_mcp/__init__.py"
+    )
+    if spec and spec.loader:
+        azure_mcp = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(azure_mcp)
         version = azure_mcp.__version__
         print(f"  ✓ Package version: {version}")
         return True
-    except ImportError as e:
-        print(f"  ✗ Failed to import package: {e}")
+    else:
+        print("  ✗ Failed to load package")
         return False
 
 
@@ -130,7 +136,7 @@ def test_readme():
         ("Authentication section", "## Authentication"),
         ("Tools documentation", "### 1. `list_subscriptions`"),
         ("MCP configuration", "## MCP Configuration"),
-        ("python -m azure_mcp.server start", "python -m azure_mcp.server start"),
+        ("python -m azure_mcp.server command", "python -m azure_mcp.server"),
     ]
     
     all_passed = True

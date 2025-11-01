@@ -29,7 +29,7 @@ To use the Azure MCP server with Claude Desktop:
      "mcpServers": {
        "azure": {
          "command": "python",
-         "args": ["-m", "azure_mcp.server", "start"]
+         "args": ["-m", "azure_mcp.server"]
        }
      }
    }
@@ -71,7 +71,7 @@ What storage accounts do I have in subscription 12345678-1234-1234-1234-12345678
 You can test the server manually by running it and sending JSON-RPC messages via stdin:
 
 ```bash
-python -m azure_mcp.server start
+python -m azure_mcp.server
 ```
 
 Then send a JSON-RPC request (note: this is for testing only, normally an MCP client handles this):
@@ -95,7 +95,7 @@ export AZURE_CLIENT_SECRET="your-client-secret"
 Then run the server:
 
 ```bash
-python -m azure_mcp.server start
+python -m azure_mcp.server
 ```
 
 ## Troubleshooting
