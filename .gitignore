@@ -48,3 +48,7 @@ dmypy.json
 
 # Distribution
 *.whl
+
+# Temporary files
+*.tmp
+*.bak
