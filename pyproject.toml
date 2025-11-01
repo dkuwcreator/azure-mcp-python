@@ -12,7 +12,7 @@ authors = [
     { name = "Azure MCP Contributors" }
 ]
 dependencies = [
-    "mcp>=1.0.0",
+    "mcp>=1.10.0",
     "azure-identity>=1.15.0",
     "azure-mgmt-resource>=23.0.0",
     "azure-mgmt-storage>=21.0.0",

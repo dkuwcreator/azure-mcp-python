@@ -1,0 +1,10 @@
+# Core MCP and Azure dependencies
+mcp>=1.10.0
+azure-identity>=1.15.0
+azure-mgmt-resource>=23.0.0
+azure-mgmt-storage>=21.0.0
+azure-mgmt-subscription>=3.1.0
+
+# CLI and async support
+click>=8.1.0
+anyio>=4.0.0
